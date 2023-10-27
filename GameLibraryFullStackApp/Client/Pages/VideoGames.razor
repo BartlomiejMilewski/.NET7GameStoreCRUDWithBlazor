@@ -15,6 +15,7 @@
 else
 {
     <QuickGrid Items="games.AsQueryable()">
+        <PropertyColumn Property="g => g.Id" />
         <PropertyColumn Property="g => g.Title" />
         <PropertyColumn Property="g => g.Publisher" />
         <PropertyColumn Property="g => g.ReleaseYear" />
@@ -22,13 +23,6 @@ else
             <button @onclick="(() => EditVideoGame(context.Id))" class="btn btn-primary">Edit</button>
         </TemplateColumn>
     </QuickGrid>
-
-    @*<ul>
-        @foreach (var game in games)
-        {
-            <li>@game.Title - @game.Publisher - @game.ReleaseYear.</li>
-        }
-    </ul>*@
 }
 
 
